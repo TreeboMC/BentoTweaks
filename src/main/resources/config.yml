@@ -1,0 +1,35 @@
+SHEEP:
+  LEVELS: 3
+  ENABLED: 'true'
+COW:
+  LEVELS: 3
+  ENABLED: 'true'
+WOLF:
+  LEVELS: 3
+  ENABLED: 'true'
+PIG:
+  LEVELS: 3
+  ENABLED: 'true'
+RABBIT:
+  LEVELS: 3
+  ENABLED: 'true'
+CHICKEN:
+  LEVELS: 3
+  ENABLED: 'true'
+TURTLE:
+  LEVELS: 15
+  ENABLED: 'true'
+PARROT:
+  LEVELS: 3
+  ENABLED: 'true'
+OCELOT:
+  LEVELS: 3
+  ENABLED: 'true'
+MUSHROOM_COW:
+  LEVELS: 15
+  ENABLED: 'true'
+HORSE:
+  LEVELS: 3
+  ENABLED: 'true'
+
+insufficientLEVELS: 'You lack sufficient understanding to perform this ritual.'
