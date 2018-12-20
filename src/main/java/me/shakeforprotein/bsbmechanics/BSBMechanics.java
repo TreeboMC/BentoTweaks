@@ -157,6 +157,7 @@ public final class BSBMechanics extends JavaPlugin implements Listener {
         ItemStack pOff = p.getInventory().getItemInOffHand();
         pOff.setType(Material.WRITTEN_BOOK);
         BookMeta pBook = (BookMeta) pOff.getItemMeta();
+        pBook.setDisplayName("The effects of Five billion Volts on various cadavers");
         pBook.setTitle("The effects of Five billion Volts on various cadavers");
         pBook.setAuthor("Dr. V. Frankenstein");
 

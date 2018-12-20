@@ -4,3 +4,4 @@ main: me.shakeforprotein.bsbmechanics.BSBMechanics
 authors: [ShakeforProtein]
 description: Custm game mechanics for Bentbox Skyblock and Acid Islands.
 website: http://treebomc.com
+api-version: 1.13
