@@ -40,7 +40,7 @@ public final class BSBMechanics extends JavaPlugin implements Listener {
         if (e.getAction() == Action.RIGHT_CLICK_BLOCK && e.getClickedBlock().getType() == Material.CAULDRON && e.getPlayer().getInventory().getItemInMainHand().getType() == Material.STICK) {
             Player p = e.getPlayer();
             String world = p.getWorld().getName();
-            if ((world.equalsIgnoreCase("BSkyblock_world")) || (world.equalsIgnoreCase("AcidIsland_world"))) {
+            if ((world.equalsIgnoreCase("BSkyblock_world")) || (world.equalsIgnoreCase("AcidIsland_world")) || world.equalsIgnoreCase(e.getClickedBlock().getWorld().toString())) {
 
                 Cauldron cauldron = (Cauldron) e.getClickedBlock().getState().getData();
                 Location target = e.getClickedBlock().getLocation();
@@ -81,6 +81,18 @@ public final class BSBMechanics extends JavaPlugin implements Listener {
                     }
                     if (p.getInventory().getItemInOffHand().getType() == Material.BOOK) {
                         createKnowledgeTome(p);
+                    }
+                    if (p.getInventory().getItemInOffHand().getType() == Material.NETHER_WART_BLOCK) {
+                        ItemStack redMushroom = new ItemStack(Material.RED_MUSHROOM);
+                        redMushroom.setType(Material.RED_MUSHROOM);
+                        redMushroom.setAmount(1);
+                        ItemStack brownMushroom = new ItemStack(Material.BROWN_MUSHROOM);
+                        brownMushroom.setType(Material.BROWN_MUSHROOM);
+                        brownMushroom.setAmount(1);
+                        e.getClickedBlock().getWorld().dropItem(target.add(0,2,0), redMushroom);
+                        e.getClickedBlock().getWorld().dropItem(target.add(0,2,0), brownMushroom);
+                        p.getInventory().getItemInOffHand().setType(Material.AIR);
+
                     }
                 }
                 else{p.sendMessage(ChatColor.RED + "Your cauldron must be full if you want to avoid accidents like this.");
@@ -169,7 +181,7 @@ public final class BSBMechanics extends JavaPlugin implements Listener {
         pages.add("Rabbit:\n1 part Carrot (nibbled)\n3 parts saline\n" + getConfig().getInt("RABBIT.LEVELS") + " parts Knowledge");
         pages.add("Chicken:\n1 part feather (pluckewd)\n3 parts saline\n" + getConfig().getInt("CHICKEN.LEVELS") + " parts Knowledge");
         pages.add("Ocelot:\n1 part cod (raw)\n3 parts saline\n" + getConfig().getInt("OCELOT.LEVELS") + " parts Knowledge");
-        pages.add("Pigs:\n1 part Seagrass (slimy)\n3 parts saline\n" + getConfig().getInt("TURTLE.LEVELS") + " parts Knowledge");
+        pages.add("Turtles:\n1 part Seagrass (slimy)\n3 parts saline\n" + getConfig().getInt("TURTLE.LEVELS") + " parts Knowledge");
         pages.add("Wolf:\n1 part Bone (chewed)\n3 parts saline\n" + getConfig().getInt("WOLF.LEVELS") + " parts Knowledge");
         pages.add("Pigs:\n1 part Carrot on a stick (bitten)\n3 parts saline\n" + getConfig().getInt("PIG.LEVELS") + " parts Knowledge");
         pages.add("Sheep:\n1 part white wool(sheared)\n3 parts saline\n" + getConfig().getInt("SHEEP.LEVELS") + " parts Knowledge");
