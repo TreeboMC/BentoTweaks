@@ -11,7 +11,7 @@
 
     <name>BSBMechanics</name>
 
-    <description>Custm game mechanics for Bentbox Skyblock and Acid Islands.</description>
+    <description>Custom game mechanics for Bentbox Skyblock and Acid Islands.</description>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
