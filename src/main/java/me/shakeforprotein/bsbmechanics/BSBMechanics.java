@@ -6,6 +6,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.BookMeta;
 import org.bukkit.material.Cauldron;
@@ -37,7 +38,8 @@ public final class BSBMechanics extends JavaPlugin implements Listener {
     int cost = 0;
     @EventHandler
     private void onStickCauldron (PlayerInteractEvent e) {
-        if (e.getAction() == Action.RIGHT_CLICK_BLOCK && e.getClickedBlock().getType() == Material.CAULDRON && e.getPlayer().getInventory().getItemInMainHand().getType() == Material.STICK) {
+        EquipmentSlot Hand = e.getHand();
+        if (e.getAction() == Action.RIGHT_CLICK_BLOCK && Hand.equals(EquipmentSlot.HAND)&& e.getClickedBlock().getType() == Material.CAULDRON && e.getPlayer().getInventory().getItemInMainHand().getType() == Material.STICK) {
             Player p = e.getPlayer();
             String world = p.getWorld().getName();
             if ((world.equalsIgnoreCase("BSkyblock_world")) || (world.equalsIgnoreCase("AcidIsland_world")) || world.equalsIgnoreCase(e.getClickedBlock().getWorld().toString())) {
@@ -119,7 +121,10 @@ public final class BSBMechanics extends JavaPlugin implements Listener {
             if (p.getLevel() >= cost) {
                 p.getWorld().strikeLightning(target);
                 p.setLevel(p.getLevel() - cost);
-                p.getInventory().getItemInOffHand().setType(Material.AIR);
+
+                //PhysicProdigy added this to minus one item from the left hand
+                p.getInventory().getItemInOffHand().setAmount(p.getInventory().getItemInOffHand().getAmount() - 1);
+
             Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(this, new Runnable() {
                 public void run() {
                     p.getWorld().strikeLightning(target);
