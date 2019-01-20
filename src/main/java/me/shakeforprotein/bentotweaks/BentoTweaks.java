@@ -1,7 +1,5 @@
-package me.shakeforprotein.bsbmechanics;
+package me.shakeforprotein.bentotweaks;
 
-import com.sun.corba.se.impl.oa.poa.POAFactory;
-import com.sun.org.apache.bcel.internal.generic.NEW;
 import org.bukkit.*;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
@@ -12,28 +10,27 @@ import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.BookMeta;
 import org.bukkit.material.Cauldron;
-import org.bukkit.material.Mushroom;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public final class BSBMechanics extends JavaPlugin implements Listener {
+public final class BentoTweaks extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         Boolean debug = false;
-        System.out.println("BSBMechanics is starting");
+        System.out.println("BentoTweaks is starting");
         getServer().getPluginManager().registerEvents(this, this);
         getConfig().options().copyDefaults(true);
         getConfig().set("version", this.getDescription().getVersion());
         saveConfig();
-        System.out.println("BSBMechanics startup complete");
+        System.out.println("BentoTweaks startup complete");
     }
 
     @Override
     public void onDisable() {
-        System.out.println("BSBMechanics has shut down");
+        System.out.println("BentoTweaks has shut down");
     }
 
     int cost = 0;

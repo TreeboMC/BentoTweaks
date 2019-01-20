@@ -1,6 +1,6 @@
-name: BSBMechanics
+name: BentoTweaks
 version: ${project.version}
-main: me.shakeforprotein.bsbmechanics.BSBMechanics
+main: me.shakeforprotein.bentotweaks.BentoTweaks
 authors: [ShakeforProtein]
 description: Custm game mechanics for Bentbox Skyblock and Acid Islands.
 website: http://treebomc.com
