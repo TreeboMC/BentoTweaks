@@ -20,7 +20,7 @@ public final class BentoTweaks extends JavaPlugin implements Listener {
 
     private UpdateChecker uc = new UpdateChecker(this);
     private NotifyStaff notifyStaff = new NotifyStaff(this);
-    private BsbTweaksCommand bsbTweaksCommand = new BsbTweaksCommand(this);
+    private BentoTweaksCommand bentoTweaksCommand = new BentoTweaksCommand(this);
 
 
     @Override
@@ -29,7 +29,7 @@ public final class BentoTweaks extends JavaPlugin implements Listener {
         System.out.println("BentoTweaks is starting");
         uc.getCheckDownloadURL();
         getServer().getPluginManager().registerEvents(new NotifyStaff(this), this);
-        this.getCommand("bsbtweaks").setExecutor(bsbTweaksCommand);
+        this.getCommand("bentotweaks").setExecutor(bentoTweaksCommand);
         getServer().getPluginManager().registerEvents(this, this);
         getConfig().options().copyDefaults(true);
         getConfig().set("version", this.getDescription().getVersion());

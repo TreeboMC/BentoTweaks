@@ -7,11 +7,11 @@ website: http://treebo.games/minecraft
 api-version: 1.13
 
 commands:
-  bsbtweaks:
+  bentotweaks:
     description: 'Presently only returns the version'
     usage: <command>
 
 permissions:
-  bsbcustommechanics.version:
+  bentotweaks.version:
     description: 'Allows use of the bsbtweaks version command'
     default: op

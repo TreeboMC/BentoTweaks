@@ -1,5 +1,5 @@
-apiLink: 'https://api.github.com/repos/BSBCustomMechanics/TreeboTickets/releases/latest'
-releasePage: 'https://github.com/TreeboMC/BSBCustomMechanics/releases/latest'
+apiLink: 'https://api.github.com/repos/TreeboMC/BentoTweaks/releases/latest'
+releasePage: 'https://github.com/TreeboMC/BentoTweaks/releases/latest'
 checkUpdates: 'true'
 SHEEP:
   LEVELS: 3
