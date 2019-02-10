@@ -2,6 +2,16 @@ name: BentoTweaks
 version: ${project.version}
 main: me.shakeforprotein.bentotweaks.BentoTweaks
 authors: [ShakeforProtein]
-description: Custm game mechanics for Bentbox Skyblock and Acid Islands.
+description: Custom game mechanics for Bentbox Skyblock, Acid Islands, Skygrid and Caveblock.
 website: http://treebomc.com
 api-version: 1.13
+
+commands:
+  bsbtweaks:
+    description: 'Presently only returns the version'
+    usage: <command>
+
+permissions:
+  bsbcustommechanics.version:
+    description: 'Allows use of the bsbtweaks version command'
+    default: op

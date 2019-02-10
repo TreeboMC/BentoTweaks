@@ -1,3 +1,6 @@
+apiLink: 'https://api.github.com/repos/BSBCustomMechanics/TreeboTickets/releases/latest'
+releasePage: 'https://github.com/TreeboMC/BSBCustomMechanics/releases/latest'
+checkUpdates: 'true'
 SHEEP:
   LEVELS: 3
   ROTTENFLESH: 40

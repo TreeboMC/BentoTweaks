@@ -17,10 +17,19 @@ import java.util.List;
 
 
 public final class BentoTweaks extends JavaPlugin implements Listener {
+
+    private UpdateChecker uc = new UpdateChecker(this);
+    private NotifyStaff notifyStaff = new NotifyStaff(this);
+    private BsbTweaksCommand bsbTweaksCommand = new BsbTweaksCommand(this);
+
+
     @Override
     public void onEnable() {
         Boolean debug = false;
         System.out.println("BentoTweaks is starting");
+        uc.getCheckDownloadURL();
+        getServer().getPluginManager().registerEvents(new NotifyStaff(this), this);
+        this.getCommand("bsbtweaks").setExecutor(bsbTweaksCommand);
         getServer().getPluginManager().registerEvents(this, this);
         getConfig().options().copyDefaults(true);
         getConfig().set("version", this.getDescription().getVersion());
@@ -47,6 +56,7 @@ public final class BentoTweaks extends JavaPlugin implements Listener {
     int totalbone = 0;
     int totalshulker = 0;
     int totalphantom = 0;
+
     @EventHandler
     private void onStickCauldron (PlayerInteractEvent e) {
         EquipmentSlot Hand = e.getHand();
